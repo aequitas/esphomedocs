@@ -8,22 +8,6 @@ oscillate output.
 
 |image0|
 
-Currently supported fan platforms:
-
-========================  ========================  ========================
-|Binary Fan|_             |Speed Fan|_
-------------------------  ------------------------  ------------------------
-`Binary Fan`_             `Speed Fan`_
-========================  ========================  ========================
-
-.. |Binary Fan| image:: /esphomeyaml/images/fan.svg
-    :class: component-image
-.. _Binary Fan: /esphomeyaml/components/fan/binary.html
-
-.. |Speed Fan| image:: /esphomeyaml/images/fan.svg
-    :class: component-image
-.. _Speed Fan: /esphomeyaml/components/fan/speed.html
-
 Base Fan Configuration
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -50,3 +34,12 @@ Configuration variables:
 .. |image0| image:: /esphomeyaml/components/fan/fan.png
    :class: align-center
    :width: 70.0%
+
+Full Fan Index
+^^^^^^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    binary.rst
+    speed.rst

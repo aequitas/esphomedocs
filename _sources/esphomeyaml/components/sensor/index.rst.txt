@@ -5,67 +5,6 @@ esphomelib has support for many different sensors. Each of them is a
 platform of the ``sensor`` domain and each sensor has several base
 configuration options.
 
-Currently supported sensor platforms:
-
-======================  ======================  ======================
-|ADC|_                  |ADS1115|_              |BMP085|_
-----------------------  ----------------------  ----------------------
-`ADC`_                  `ADS1115`_              `BMP085`_
-----------------------  ----------------------  ----------------------
-|Dallas|_               |DHT|_                  |HDC1080|_
-----------------------  ----------------------  ----------------------
-`Dallas`_               `DHT`_                  `HDC1080`_
-----------------------  ----------------------  ----------------------
-|HTU21D|_               |MPU6050|_              |Pulse Counter|_
-----------------------  ----------------------  ----------------------
-`HTU21D`_               `MPU6050`_              `Pulse Counter`_
-----------------------  ----------------------  ----------------------
-|Ultrasonic Sensor|_
-----------------------  ----------------------  ----------------------
-`Ultrasonic Sensor`_
-======================  ======================  ======================
-
-.. |ADC| image:: /esphomeyaml/images/flash.svg
-    :class: component-image
-.. _ADC: /esphomeyaml/components/sensor/adc.html
-
-.. |ADS1115| image:: /esphomeyaml/images/ads1115.jpg
-    :class: component-image
-.. _ADS1115: /esphomeyaml/components/sensor/ads1115.html
-
-.. |BMP085| image:: /esphomeyaml/images/bmp180.jpg
-    :class: component-image
-.. _BMP085: /esphomeyaml/components/sensor/bmp085.html
-
-.. |Dallas| image:: /esphomeyaml/images/ds18b20.jpg
-    :class: component-image
-.. _Dallas: /esphomeyaml/components/sensor/dallas.html
-
-.. |DHT| image:: /esphomeyaml/images/dht22.jpg
-    :class: component-image
-.. _DHT: /esphomeyaml/components/sensor/dht.html
-
-.. |HDC1080| image:: /esphomeyaml/images/HDC1080.jpg
-    :class: component-image
-.. _HDC1080: /esphomeyaml/components/sensor/hdc1080.html
-
-.. |HTU21D| image:: /esphomeyaml/images/htu21d.jpg
-    :class: component-image
-.. _HTU21D: /esphomeyaml/components/sensor/htu21d.html
-
-.. |MPU6050| image:: /esphomeyaml/images/mpu6050.jpg
-    :class: component-image
-.. _MPU6050: /esphomeyaml/components/sensor/mpu6050.html
-
-.. |Pulse Counter| image:: /esphomeyaml/images/pulse.svg
-    :class: component-image
-.. _Pulse Counter: /esphomeyaml/components/sensor/pulse_counter.html
-
-.. |Ultrasonic Sensor| image:: /esphomeyaml/images/hc-sr04.png
-    :class: component-image
-.. _Ultrasonic Sensor: /esphomeyaml/components/sensor/ultrasonic.html
-
-
 Base Sensor Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -134,6 +73,14 @@ sensor <https://www.home-assistant.io/components/sensor.filter/>`__.
       - exponential_moving_average:
           alpha: 0.1
           send_every: 15
+      - throttle: 1s
+      - heartbeat: 5s
+      - debounce: 0.1s
+      - delta: 5.0
+      - unique:
+      - or:
+        - throttle: 1s
+        - delta: 5.0
       - lambda: x * (9.0/5.0) + 32.0
 
 Above example configuration entry is probably a bit useless, but shows
@@ -161,6 +108,32 @@ every filter there is currently:
    -  **alpha**: The forget factor/alpha value of the filter.
    -  **send_every**: How often a sensor value should be pushed out.
 
+-  **throttle**: Throttle the incoming values. When this filter gets an incoming value,
+   it checks if the last incoming value is at least ``specified time period`` old.
+   If it is not older than the configured value, the value is not passed forward.
+
+-  **heartbeat**: Send the last value that this sensor in the specified time interval.
+   So a value of ``10s`` will cause the filter to output values every 10s regardless
+   of the input values.
+
+-  **debounce**: Only send values if the last incoming value is at least ``specified time period``
+   old. For example if two values come in at almost the same time, this filter will only output
+   the last value and only after the specified time period has passed without any new incoming
+   values.
+
+-  **delta**: This filter stores the last value passed through this filter and only
+   passes incoming values through if the absolute difference is greater than the configured
+   value. For example if a value of 1.0 first comes in, it's passed on. If the delta filter
+   is configured with a value of 5, it will now not pass on an incoming value of 2.0, only values
+   that are at least 6.0 big or -4.0.
+
+-  **unique**: This filter has no parameter and does one very simple thing: It only passes
+   forward values if they are different from the last one that got through the pipeline.
+
+-  **or**: Pass forward a value with the first child filter that returns. Above example
+   will only pass forward values that are *either* at least 1s old or are if the absolute
+   difference is at least 5.0.
+
 -  **lambda**: Perform a simple mathematical operation over the sensor
    values. The input value is ``x`` and the result of the lambda is used
    as output. Each floating point operation should have ``.0`` attached
@@ -182,3 +155,27 @@ fahrenheit.
     filters:
       - lambda: x * (9.0/5.0) + 32.0
     unit_of_measurement: "°F"
+
+Full Sensor Index
+^^^^^^^^^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    dallas.rst
+    adc.rst
+    ads1115.rst
+    bmp085.rst
+    dht.rst
+    hdc1080.rst
+    htu21d.rst
+    pulse_counter.rst
+    ultrasonic.rst
+    mpu6050.rst
+    bh1750.rst
+    bme280.rst
+    bme680.rst
+    tsl2561.rst
+    sht3xd.rst
+    dht12.rst
+    rotary_encoder.rst

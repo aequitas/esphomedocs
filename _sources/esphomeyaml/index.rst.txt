@@ -39,6 +39,12 @@ Features
 Using With
 ~~~~~~~~~~
 
+This list contains guides for how to use esphomeyaml with different devices.
+esphomeyaml is primarily designed to be used with NodeMCUs and similar "hackable" devices.
+However, you can still use the esphomeli/yaml suite with the popular Sonoff devices.
+Please also note that other Sonoff devices are probably also supported and have a similar
+setup procedure to the devices in the list below.
+
 ==================  ==================  ==================
 |Sonoff S20|_
 ------------------  ------------------  ------------------
@@ -128,9 +134,9 @@ Sensor Components
 ----------------------  ----------------------  ----------------------
 `BME280`_               `BME680`_               `TSL2561`_
 ----------------------  ----------------------  ----------------------
-|SHT3X-D|_
+|SHT3X-D|_              |DHT12|_                |Rotary Encoder|_
 ----------------------  ----------------------  ----------------------
-`SHT3X-D`_
+`SHT3X-D`_              `DHT12`_                `Rotary Encoder`_
 ======================  ======================  ======================
 
 .. |Sensor Core| image:: /esphomeyaml/images/folder-open.svg
@@ -196,6 +202,14 @@ Sensor Components
 .. |SHT3X-D| image:: /esphomeyaml/images/sht3xd.jpg
     :class: component-image
 .. _SHT3X-D: /esphomeyaml/components/sensor/sht3xd.html
+
+.. |DHT12| image:: /esphomeyaml/images/dht12.jpg
+    :class: component-image
+.. _DHT12: /esphomeyaml/components/sensor/dht12.html
+
+.. |Rotary Encoder| image:: /esphomeyaml/images/rotary_encoder.jpg
+    :class: component-image
+.. _Rotary Encoder: /esphomeyaml/components/sensor/rotary_encoder.html
 
 
 Binary Sensor Components
@@ -433,7 +447,6 @@ Full Index
     faq.rst
     components/esphomeyaml.rst
     components/dallas.rst
-    components/sensor/dallas.rst
     components/i2c.rst
     components/logger.rst
     components/wifi.rst
@@ -443,51 +456,16 @@ Full Index
     components/deep_sleep.rst
     components/debug.rst
     components/ads1115.rst
-    components/binary_sensor/index.rst
-    components/binary_sensor/gpio.rst
-    components/binary_sensor/status.rst
-    components/sensor/index.rst
-    components/sensor/adc.rst
-    components/sensor/ads1115.rst
-    components/sensor/bmp085.rst
-    components/sensor/dht.rst
-    components/sensor/hdc1080.rst
-    components/sensor/htu21d.rst
-    components/sensor/pulse_counter.rst
-    components/sensor/ultrasonic.rst
-    components/sensor/mpu6050.rst
     components/output/index.rst
-    components/power_supply.rst
-    components/output/esp8266_pwm.rst
-    components/output/gpio.rst
-    components/output/ledc.rst
-    components/pca9685.rst
-    components/output/pca9685.rst
-    components/light/index.rst
-    components/light/binary.rst
-    components/light/monochromatic.rst
-    components/light/rgb.rst
-    components/light/rgbw.rst
+    components/sensor/index.rst
     components/switch/index.rst
-    components/switch/gpio.rst
-    components/switch/shutdown.rst
-    components/switch/output.rst
-    components/ir_transmitter.rst
-    components/switch/ir_transmitter.rst
-    components/switch/restart.rst
     components/fan/index.rst
-    components/fan/binary.rst
-    components/fan/speed.rst
+    components/binary_sensor/index.rst
+    components/light/index.rst
+    components/power_supply.rst
+    components/pca9685.rst
+    components/ir_transmitter.rst
     components/pcf8574.rst
     components/esp32_ble.rst
-    components/binary_sensor/esp32_ble.rst
     components/esp32_touch.rst
-    components/binary_sensor/esp32_touch.rst
-    components/light/fastled_clockless.rst
-    components/light/fastled_spi.rst
-    components/sensor/bh1750.rst
-    components/sensor/bme280.rst
-    components/sensor/bme680.rst
-    components/sensor/tsl2561.rst
-    components/sensor/sht3xd.rst
-    components/using-with/sonoff-s20.rst
+    using-with/sonoff-s20.rst

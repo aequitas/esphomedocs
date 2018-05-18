@@ -13,6 +13,7 @@ See :cpp:func:`Application::register_sensor`.
     adc-sensor.rst
     dallas.rst
     dht.rst
+    dht12.rst
     pulse-counter.rst
     ultrasonic.rst
     ads1115.rst
@@ -114,6 +115,36 @@ Filter
     :undoc-members:
 
 .. doxygenclass:: sensor::FilterOutNANFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::ThrottleFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::HeartbeatFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::DebounceFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::DeltaFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::OrFilter
+    :members:
+    :protected-members:
+    :undoc-members:
+
+.. doxygenclass:: sensor::UniqueFilter
     :members:
     :protected-members:
     :undoc-members:

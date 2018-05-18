@@ -7,35 +7,19 @@ features such as RGB colors, transitions, flashing and effects.
 
 |image0|
 
-Currently supported light platforms:
-
-========================  ========================  ========================
-|Binary Light|_           |Monochromatic Light|_    |RGB Light|_
-------------------------  ------------------------  ------------------------
-`Binary Light`_           `Monochromatic Light`_    `RGB Light`_
-------------------------  ------------------------  ------------------------
-|RGBW Light|_
-------------------------  ------------------------  ------------------------
-`RGBW Light`_
-========================  ========================  ========================
-
-
-.. |Binary Light| image:: /esphomeyaml/images/lightbulb.svg
-    :class: component-image
-.. _Binary Light: /esphomeyaml/components/light/binary.html
-
-.. |Monochromatic Light| image:: /esphomeyaml/images/brightness-medium.svg
-    :class: component-image
-.. _Monochromatic Light: /esphomeyaml/components/light/monochromatic.html
-
-.. |RGB Light| image:: /esphomeyaml/images/rgb.png
-    :class: component-image
-.. _RGB Light: /esphomeyaml/components/light/rgb.html
-
-.. |RGBW Light| image:: /esphomeyaml/images/rgbw.png
-    :class: component-image
-.. _RGBW Light: /esphomeyaml/components/light/rgbw.html
-
 .. |image0| image:: /esphomeyaml/components/light/light-rgb.png
    :class: align-center
    :width: 30.0%
+
+Full Light Index
+^^^^^^^^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    binary.rst
+    monochromatic.rst
+    rgb.rst
+    rgbw.rst
+    fastled_clockless.rst
+    fastled_spi.rst

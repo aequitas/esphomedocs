@@ -5,22 +5,6 @@ With esphomelib you can use different types of binary sensors. They will
 automatically appear in the Home Assistant front-end and have several
 configuration options.
 
-Currently supported binary sensor platforms:
-
-======================  ======================  ======================
-|GPIO|_                 |Status|_
-----------------------  ----------------------  ----------------------
-`GPIO`_                 `Status`_
-======================  ======================  ======================
-
-.. |GPIO| image:: /esphomeyaml/images/pin.svg
-    :class: component-image
-.. _GPIO: /esphomeyaml/components/binary_sensor/gpio.html
-
-.. |Status| image:: /esphomeyaml/images/server-network.svg
-    :class: component-image
-.. _Status: /esphomeyaml/components/binary_sensor/status.html
-
 
 Base Binary Sensor Configuration
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -45,3 +29,14 @@ Configuration variables:
    to ``False``.
 -  All other options from `MQTT
    Component </esphomeyaml/components/mqtt.html#mqtt-component-base-configuration>`__.
+
+Full Binary Sensor Index
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. toctree::
+    :maxdepth: 1
+
+    gpio.rst
+    status.rst
+    esp32_ble.rst
+    esp32_touch.rst

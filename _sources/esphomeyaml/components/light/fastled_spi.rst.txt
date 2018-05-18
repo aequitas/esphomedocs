@@ -48,6 +48,10 @@ Configuration variables:
    `time </esphomeyaml/configuration-types.html#time>`__): The length of
    the transition if no transition parameter is provided by Home
    Assistant. Defaults to ``1s``.
+-  **power_supply** (*Optional*, `id </esphomeyaml/configuration-types.html#id>`__): The `power
+   supply </esphomeyaml/components/power_supply.html>`__ to connect to
+   this light. When the light is turned on, the power supply will
+   automatically be switched on too.
 -  **id** (*Optional*,
    `id </esphomeyaml/configuration-types.html#id>`__): Manually specify
    the ID used for code generation.
