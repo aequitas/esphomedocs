@@ -265,6 +265,7 @@ See Also
 ^^^^^^^^
 
 - :doc:`API Reference </api/sensor/index>`
+- `Edit this page on GitHub <https://github.com/OttoWinter/esphomedocs/blob/master/esphomeyaml/components/sensor/index.rst>`__
 
 .. toctree::
     :maxdepth: 1
@@ -288,3 +289,4 @@ See Also
     rotary_encoder.rst
     template.rst
     max6675.rst
+    esp32_hall.rst
